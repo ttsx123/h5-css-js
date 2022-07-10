@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">
+
+    </div>
+    <script>
+        function mytime(){
+            var tim = new Date();
+            var y = tim.getFullYear();
+            var m = tim.getMonth();
+            var d = tim.getDate();
+            var h = tim.getHours();
+            // if(h>12){
+            //     h = h-12;
+            // }
+            var min = tim.getMinutes();
+            var s = tim.getSeconds();
+            var rq = "";
+            if(h>12){
+                rq = "PM";
+            }else{
+                rq = "AM";
+            }
+            var xq = tim.getDay();
+            document.getElementById("time").innerHTML="现在的时间是："+y+"年"+(m+1)+"月"+d+"日"+h+"时"+min+"分"+s+"秒"+"&nbsp"+rq+"&nbsp"+"星期"+xq;
+        }
+        setInterval("mytime()",1000);
+    </script>
+</body>
+</html>

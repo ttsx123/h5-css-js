@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function study(count){
+            var n1 = prompt("请输入第一个数");
+            var m1 = parseInt(n1);
+            var n2 = prompt("请输入第二个数");
+            var m2 = parseInt(n2);
+            var n3 = prompt("请输入运算符");
+            switch(n3){
+                case '+' : 
+                    var n4 = m1+m2;
+                    alert("两数的运算结果是："+m1+"+"+m2+"="+n4)
+                    break;
+                case '-' : 
+                    var n5 = m1-m2;
+                    alert("两数的运算结果是："+m1+"-"+m2+"="+n5)
+                    break;
+                case '*' : 
+                    var n6 = m1*m2;
+                    alert("两数的运算结果是："+m1+"*"+m2+"="+n6)
+                    break;
+                default:
+                    alert("输入错误");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="" id="" value="计算两数结果" onclick="study()">
+    
+</body>
+</html>

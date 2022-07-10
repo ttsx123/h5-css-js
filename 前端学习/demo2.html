@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form method="post" action="#" enctype="multipart/form-data">
+			id：<input type="hidden" value="1" name="name" />
+			用户名：<input type="text" readonly="readonly" name="name" value="张三" />
+			<br />
+			密码：<input required placeholder="请输入6位的数字密码" type="password" name="pwd" />
+			<br/>
+			邮箱 <input  type="email" name="email" />
+			<br/>
+			性别：
+			     <label for="gender">男</label>
+			     <input type="radio" name="sex" id="gender" />
+			      <label for="gender2">女</label>
+			     <input type="radio" name="sex" id="gender2" />
+			<!--<input type="radio" value="male" name="sex" checked="checked" />男
+				<input type="radio" value="female" name="sex" />女-->
+				<br />
+			爱好：<input type="checkbox" name="hobby" value="lq" />篮球
+			<input type="checkbox" name="hobby" value="ppq" />乒乓板
+			<input type="checkbox" name="hobby" value="ymq" />羽毛球
+			<br />
+			住址：<select>
+					<option value="1" selected="selected">--请选择--</option>
+					<option>鼓楼区</option>
+					<option>玄武区</option>
+			     </select>
+			     
+			    年龄：<input type="number" min="0" max="100" step="2" /><br/>
+			    滑块：<input type="range" min="10" max="100" step="10" />
+			   上传：<input type="file" name="file" />
+			  文本域：<textarea cols="5" rows="6" name="t"></textarea>
+			
+			<input type="submit" value="提交" />
+			<input type="reset" value="重置" />
+			<input type="button" disabled="disabled" value="提交b" />
+				<br />
+				
+		</form>
+		
+		
+		
+	</body>
+</html>

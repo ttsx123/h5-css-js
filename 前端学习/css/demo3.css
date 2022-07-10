@@ -1,0 +1,17 @@
+p{
+    font-size: 14px;
+}
+h2{
+    font-size: 16px;
+    color: red;
+}
+.asd~h2{
+    color: blue;
+}
+ol li{
+    font-size: 14px;
+}
+.qwe{
+    width: 900px;
+    height: 450px;
+}
