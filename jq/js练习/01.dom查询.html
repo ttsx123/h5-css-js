@@ -21,106 +21,107 @@
 			window.onload = function() {
 				//1.查找#bj节点
 				//获取按钮对象
-				var btn01Ele = document.getElementById("btn01");
-		        //给按钮绑定单击响应函数
-		        btn01Ele.onclick = function(){
-		        	//获取#bj节点
-		        	var bjEle = document.getElementById("bj");
-		        	//获取北京文本
-		        	var bjText = bjEle.innerHTML;
-		        	alert(bjText);
-		        };
-		      	//2.查找所有li节点
-				var btn02Ele = document.getElementById("btn02");
-				btn02Ele.onclick = function(){
-					var liEles = document.getElementsByTagName("li");
-					//遍历liEles得到每一个li
-					for(var i = 0; i<liEles.length; i++){
-						alert(liEles[i].innerHTML);
-					}
-				};
-				//3.查找name=gender的所有节点
-				var btn03Ele = document.getElementById("btn03");
-				btn03Ele.onclick = function(){
-					var nameEles = document.getElementsByName("gender");
-					alert(nameEles[0].value);
-					alert(nameEles[1].value);
-				};
-				//4.查找#city下所有li节点
-				var btn04Ele = document.getElementById("btn04");
-				btn04Ele.onclick = function(){
-					//获取city节点
-					var cityEle = document.getElementById("city");
-					//获取city下所有歌li
-					var liEles = cityEle.getElementsByTagName("li");
-					//遍历liEles
-					for(var i = 0; i<liEles.length; i++){
-						alert(liEles[i].innerHTML);
-					}
+				// var btn01Ele = document.getElementById("btn01");
+		        // //给按钮绑定单击响应函数
+		        // btn01Ele.onclick = function(){
+		        // 	//获取#bj节点
+		        // 	var bjEle = document.getElementById("bj");
+		        // 	//获取北京文本
+		        // 	var bjText = bjEle.innerHTML;
+		        // 	alert(bjText);
+		        // };
+		      	// //2.查找所有li节点
+				// var btn02Ele = document.getElementById("btn02");
+				// btn02Ele.onclick = function(){
+				// 	var liEles = document.getElementsByTagName("li");
+				// 	//遍历liEles得到每一个li
+				// 	for(var i = 0; i<liEles.length; i++){
+				// 		alert(liEles[i].innerHTML);
+				// 	}
+				// };
+				// //3.查找name=gender的所有节点
+				// var btn03Ele = document.getElementById("btn03");
+				// btn03Ele.onclick = function(){
+				// 	var nameEles = document.getElementsByName("gender");
+				// 	alert(nameEles[0].value);
+				// 	alert(nameEles[1].value);
+				// };
+				// //4.查找#city下所有li节点
+				// var btn04Ele = document.getElementById("btn04");
+				// btn04Ele.onclick = function(){
+				// 	//获取city节点
+				// 	var cityEle = document.getElementById("city");
+				// 	//获取city下所有歌li
+				// 	var liEles = cityEle.getElementsByTagName("li");
+				// 	//遍历liEles
+				// 	for(var i = 0; i<liEles.length; i++){
+				// 		alert(liEles[i].innerHTML);
+				// 	}
 					
-				};
-				//5.返回#city的所有子节点
-				var btn05Ele = document.getElementById("btn05");
-				btn05Ele.onclick = function(){
-					//获取city节点
-					var cityEle = document.getElementById("city");
-					var childNodes = cityEle.childNodes;
+				// };
+				// //5.返回#city的所有子节点
+				// var btn05Ele = document.getElementById("btn05");
+				// btn05Ele.onclick = function(){
+				// 	//获取city节点
+				// 	var cityEle = document.getElementById("city");
+				// 	var childNodes = cityEle.childNodes;
 					
-					alert(childNodes.length);
-				};
-				//6.返回#phone的第一个子节点
-				var btn06Ele = document.getElementById("btn06");
+				// 	alert(childNodes.length);
+				// };
+				// //6.返回#phone的第一个子节点
+				// var btn06Ele = document.getElementById("btn06");
 
-				btn06Ele.onclick = function(){
-					var phoneEle = document.getElementById("phone");
-					//得到它的第一个子节点
-					var firstChild = phoneEle.firstChild;
-					alert(firstChild.innerHTML);
-				};
-				//7.返回#bj的父节点
-				var btn07Ele = document.getElementById("btn07");
-				btn07Ele.onclick = function(){
-					var bjEle = document.getElementById("bj");
-					//得到北京的父节点
-					var parentNode = bjEle.parentNode;
-					alert(parentNode.innerHTML);
-				};
-				//8.返回#android的前一个兄弟节点
-				var btn08Ele = document.getElementById("btn08");
-				btn08Ele.onclick = function(){
-					var androidEle = document.getElementById("android");
-					//得到androidEle的前一个兄弟节点 node.previousSibling
-					var preXd = androidEle.previousSibling;
-					alert(preXd.innerHTML);
-				};
-				//9.读取#username的value属性值
-				var btn09Ele = document.getElementById("btn09");
-					btn09Ele.onclick = function(){
-					//得到id为username文本框
-					var userNameEle = document.getElementById("username");
-					alert(userNameEle.value);
-				};
-				//10.设置#username的value属性值
-				var btn10Ele = document.getElementById("btn10");
-				btn10Ele.onclick = function(){
-					//得到id为username文本框
-					var userNameEle = document.getElementById("username");
-					//设置它的值
-					userNameEle.value = "新的值";
-				};
-				//11.返回#bj的文本值
-				var btn11Ele = document.getElementById("btn11");
-				btn11Ele.onclick = function(){
-					//获取北京节点 <li id="bj">北京</li>
-					var bjEle = document.getElementById("bj");
-					//获取北京文本节点-->北京
-					var bjText = bjEle.firstChild;
-					//alert(bjText);
-					//获取北京文本节点里的文本内容
-					var text = bjText.nodeValue;
-					alert(text);
-				 
-				};
+				// btn06Ele.onclick = function(){
+				// 	var phoneEle = document.getElementById("phone");
+				// 	//得到它的第一个子节点
+				// 	var firstChild = phoneEle.firstChild;
+				// 	alert(firstChild.innerHTML);
+				// };
+				// //7.返回#bj的父节点
+				// var btn07Ele = document.getElementById("btn07");
+				// btn07Ele.onclick = function(){
+				// 	var bjEle = document.getElementById("bj");
+				// 	//得到北京的父节点
+				// 	var parentNode = bjEle.parentNode;
+				// 	alert(parentNode.innerHTML);
+				// };
+				// //8.返回#android的前一个兄弟节点
+				// var btn08Ele = document.getElementById("btn08");
+				// btn08Ele.onclick = function(){
+				// 	var androidEle = document.getElementById("android");
+				// 	//得到androidEle的前一个兄弟节点 node.previousSibling
+				// 	var preXd = androidEle.previousSibling;
+				// 	alert(preXd.innerHTML);
+				// };
+				// //9.读取#username的value属性值
+				// var btn09Ele = document.getElementById("btn09");
+				// 	btn09Ele.onclick = function(){
+				// 	//得到id为username文本框
+				// 	var userNameEle = document.getElementById("username");
+				// 	alert(userNameEle.value);
+				// };
+				// //10.设置#username的value属性值
+				// var btn10Ele = document.getElementById("btn10");
+				// btn10Ele.onclick = function(){
+				// 	//得到id为username文本框
+				// 	var userNameEle = document.getElementById("username");
+				// 	//设置它的值
+				// 	userNameEle.value = "新的值";
+				// };
+				// //11.返回#bj的文本值
+				// var btn11Ele = document.getElementById("btn11");
+				// btn11Ele.onclick = function(){
+				// 	//获取北京节点 <li id="bj">北京</li>
+				// 	var bjEle = document.getElementById("bj");
+				// 	//获取北京文本节点-->北京
+				// 	var bjText = bjEle.firstChild;
+				// 	//alert(bjText);
+				// 	//获取北京文本节点里的文本内容
+				// 	var text = bjText.nodeValue;
+				// 	alert(text);
+
+				// };
+				
 				
 			};
 		
