@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="ex_2_style/css.css" />
+<script type="text/javascript">
+	window.onload = function(){
+		
+		function DeleteEle(){
+			
+				//目前得到的是一个a,而我们要删除的是tr(一行)
+				//tr是a的爷爷
+				var trEle=this.parentNode.parentNode;
+				var tdEle=trEle.getElementsByTagName("td");
+				var name=tdEle[0].innerHTML;				
+		
+		
+		
+				//给每个a绑定完了之后如果不想让其跳转的话，则可以给出return false
+				//给出弹框提示
+				var flag=confirm("确定要删除"+name+"么？");
+				
+				if(flag){
+					//自己是不能删除自己的，需要是父辈的删除自己
+					trEle.parentNode.removeChild(trEle);
+					
+				}
+				
+				return false;
+			
+		}
+		
+		
+		
+		//当我们点击a的时候会触发单击函数，a是一个标签
+		var aEle=document.getElementsByTagName("a");
+		for(var i=0;i<aEle.length;i++){
+			aEle[i].onclick=DeleteEle;
+			
+		}
+		
+		/*做增加相关的操作*/
+		//1.获取增加的按钮，给增加的按钮绑定单击响应函数
+		var addEmpButton=document.getElementById("addEmpButton");
+		addEmpButton.onclick=function(){
+		//2.获取到在文本框中填充的数据
+		var nameText=document.getElementById("empName").value;
+		//alert(nameText);
+		var emailText=document.getElementById("email").value;
+		var salaryText=document.getElementById("salary").value;
+		
+		
+		/*<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="deleteEmp?id=001">Delete</a></td>
+		</tr>*/
+		
+		//创建文本节点（具体的文本上面一步已经获取到）
+		var nameTd=document.createTextNode(nameText);
+		var emailTd=document.createTextNode(emailText);
+		var salaryTd=document.createTextNode(salaryText);
+		var delTd=document.createTextNode("Delete");
+		
+		//创建a元素节点
+		var aEle =document.createElement("a");
+		aEle.href="#";
+		aEle.onclick=DeleteEle;
+		
+		//创建对应的td元素节点，然后进行拼装
+		var naTd = document.createElement("td");
+		var emTd = document.createElement("td");
+		var slTd =document.createElement("td");
+		var dlTd  =document.createElement("td");
+		
+		//td和a进行拼装，其中拼装到a的时候，需要先将a和delete拼装
+		naTd.appendChild(nameTd);
+		emTd.appendChild(emailTd);
+		slTd.appendChild(salaryTd);
+		aEle.appendChild(delTd);
+		dlTd.appendChild(aEle);
+		
+		//创建tr标签元素，将tr和td进行拼接
+		var trEle=document.createElement("tr");
+		trEle.appendChild(naTd);
+		trEle.appendChild(emTd)
+		trEle.appendChild(slTd);
+		trEle.appendChild(dlTd);
+		//获取到table,然后将table和tr进行拼接
+		
+		
+		var employeeTable =document.getElementById("employeeTable");
+		employeeTable.appendChild(trEle);
+		
+		
+		
+		
+		
+		
+		}
+		
+		
+
+		
+	};
+	
+</script>
+</head>
+<body>
+
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="deleteEmp?id=001">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="deleteEmp?id=002">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="deleteEmp?id=003">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>
