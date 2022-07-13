@@ -26,7 +26,7 @@
 			    display: none;
 			}			
 		</style>
-		<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="/Users/taotao/Downloads/h5-css-js/jq/js/jquery-1.7.2.js"></script>
 		<script type="text/javascript">
 			$(function(){
 				function anmateIt(){
@@ -39,18 +39,18 @@
 			$(document).ready(function(){
 				//1.选取所有可见的  div 元素
 				$("#btn1").click(function(){
-					$("").css("background", "#bbffaa");
+					$("div:visible").css("background", "#bbffaa");
 				});
 
 				//2.选择所有不可见的 div 元素
 				//不可见：display属性设置为none，或visible设置为hidden
 				$("#btn2").click(function(){
-					$("").show("normal").css("background", "#bbffaa");
+					$("div:hidden").show("normal").css("background", "#bbffaa");
 				});
 
 				//3.选择所有不可见的 input 元素
 				$("#btn3").click(function(){
-					alert($("").val());
+					alert($("input:hidden").val());
 				});	
 			});
 		</script>
