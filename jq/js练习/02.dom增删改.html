@@ -7,29 +7,37 @@
 		<script type="text/javascript">
 		
 			window.onload = function() {
+				
 				//获取#city元素节点
 				var cityEle = document.getElementById("city");
+
 				//获取#bj元素节点
 				var bjEle = document.getElementById("bj");
 				
 				//创建一个"广州"节点,添加到#city下
 				var btn01Ele = document.getElementById("btn01");
 				btn01Ele.onclick = function(){
+
 					/*<li>广州</li>*/
 					//1.创建广州节点
 					var text=document.createTextNode("广州");
+
 					//2.创建li元素节点
 					var liEle=document.createElement("li");
+
 					//3.组装
 					liEle.appendChild(text);
 					cityEle.appendChild(liEle);
+
 				};
 				
 				//将"广州"节点插入到#bj前面
 				var btn02Ele = document.getElementById("btn02");
 				btn02Ele.onclick = function(){
+
 					//1.创建广州节点
 					var text=document.createTextNode("广州");
+					
 					//2.创建li元素节点
 					var liEle=document.createElement("li");
 					liEle.appendChild(text);
